@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    
+    <div>
+        Name: <input formControlName="name"  placeholder="Enter Name">
+        <div *ngIf="((isSubmit || name.touched) && name.invalid)">
+             name is required
+        </div>
+
+    </div>
+
+    <div>
+
+        Email: <input formControlName="email"  placeholder="Enter Email">
+        <div *ngIf="((isSubmit || email.touched) && email.invalid)">
+            email is required
+       </div>
+    </div>
+
+    <div>
+        Password: <input formControlName="password"  placeholder="Enter Password">
+        <div *ngIf="((isSubmit || password.touched) && password.invalid)">
+            password is required
+       </div>
+
+    </div>
+    <button type="submit">Submit</button> 
+ </form>
